@@ -1,0 +1,7 @@
+{
+  "name": "hackathon-expiria",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular"
+}
