@@ -1,0 +1,52 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Manual Add
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+<ion-content padding id="page5" style="background-color:#D1D1D1;">
+  <form id="manualAdd-form1">
+    <div class="spacer" style="height:30px;" id="manualAdd-spacer6"></div>
+    <ion-item id="manualAdd-input1">
+      <ion-label>
+        Exp. Date:
+      </ion-label>
+      <ion-input type="date" placeholder=""></ion-input>
+    </ion-item>
+    <div class="spacer" style="height:20px;" id="manualAdd-spacer4"></div>
+    <ion-item id="manualAdd-input3">
+      <ion-label>
+        Name:
+      </ion-label>
+      <ion-input type="text" placeholder=""></ion-input>
+    </ion-item>
+    <div class="spacer" style="height:20px;" id="manualAdd-spacer5"></div>
+    <ion-item id="manualAdd-select2">
+      <ion-label>
+        Category
+      </ion-label>
+      <ion-select name="">
+        <ion-option>
+          Food
+        </ion-option>
+        <ion-option>
+          Cosmetics
+        </ion-option>
+        <ion-option>
+          Identification Card
+        </ion-option>
+        <ion-option>
+          Subscription
+        </ion-option>
+      </ion-select>
+    </ion-item>
+  </form>
+  <div class="spacer" style="height:50px;" id="manualAdd-spacer7"></div>
+  <button id="manualAdd-button3" ion-button color="positive" block on-click="goToAddItem()">
+    Save
+  </button>
+  <button id="manualAdd-button4" ion-button color="assertive" block on-click="goToAddItem()">
+    Cancel
+  </button>
+</ion-content>
