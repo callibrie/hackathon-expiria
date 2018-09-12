@@ -7,13 +7,15 @@
 </ion-header>
 <ion-content padding id="page7" style="background-color:#D1D1D1;">
   <form id="cameraAdd-form3">
-    <img src="assets/img/Jy3GOB0Qy2eB0im9dbm9_41517288_1883178495310456_6088353537807351808_n.jpg" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+    <img [src]="selectedImage" *ngIf="selectedImage" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
+    <!--<img src="assets/img/Jy3GOB0Qy2eB0im9dbm9_41517288_1883178495310456_6088353537807351808_n.jpg" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />-->
     <div class="spacer" style="height:30px;" id="cameraAdd-spacer8"></div>
     <ion-item id="cameraAdd-input4">
       <ion-label>
         Exp. Date:
       </ion-label>
-      <ion-input type="date" placeholder=""></ion-input>
+      <ion-note item-end>Click to edit</ion-note>
+      <ion-input placeholder="{{ imageText }}"></ion-input>
     </ion-item>
     <div class="spacer" style="height:20px;" id="cameraAdd-spacer9"></div>
     <ion-item id="cameraAdd-input5">
