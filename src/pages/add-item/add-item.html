@@ -6,8 +6,9 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page3" style="background-color:#D1D1D1;">
+
   <ng-progress [min]="0" [max]="1" color="green"></ng-progress>
-  <div class="spacer" style="height:130px;" id="addItem-spacer1"></div>
+  <div class="spacers" style="height:130px;" id="addItem-spacer1"></div>
 
   <ion-card *ngIf="imageText">
     <ion-card-header>
@@ -19,6 +20,7 @@
   </ion-card>
 
   <button id="addItem-button1" ion-button color="positive" block large (click)="selectSource()">
+
     <ion-icon name="camera"></ion-icon>
     Camera
   </button>
