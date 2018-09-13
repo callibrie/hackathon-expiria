@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders} from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 /*
@@ -20,6 +20,7 @@ export class RestProvider {
   getExpiryDatas() {
     return new Promise(resolve => {
       this.http.get(this.apiUrl+'/expiredata').subscribe(data => {
+        console.log(data);
         resolve(data);
       }, err => {
         console.log(err);

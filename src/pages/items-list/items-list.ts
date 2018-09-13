@@ -10,7 +10,7 @@ import { RestProvider } from '../../providers/rest/rest';
 export class ItemsListPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  expiryDatas: any;
+  expireDatas: any;
   toNotify: any;
 
   constructor(public navCtrl: NavController, public localNotifications: LocalNotifications, public restProvider: RestProvider) {
@@ -20,9 +20,10 @@ export class ItemsListPage {
 
   getExpiryDatas() {
     this.restProvider.getExpiryDatas()
-      .then(data => {
-        this.expiryDatas = data;
-      });
+    .then(data => {
+      this.expireDatas = data;
+      console.log(this.expireDatas);
+    });
   }
 
   startNotification(){
@@ -30,12 +31,19 @@ export class ItemsListPage {
       .then(data => {
         this.toNotify = data;
       });
+
     
+
+    for (let entry of this.toNotify) {
+      console.log(entry);
+
+    }
+
 
     this.localNotifications.schedule([{
       id: 1,
-      title: "Notif 1",
-      text: 'Multi ILocalNotification 1',
+      title: "Your item will expire soon!",
+      text: '[item name] will expire in 2 days!',
       icon: 'icon.png',
       trigger: {at: new Date(new Date().getTime() + 60000)},
     },{
