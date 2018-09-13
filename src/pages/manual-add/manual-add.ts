@@ -13,6 +13,7 @@ export class ManualAddPage {
   // should be each tab's root Page
   // constructor(public navCtrl: NavController) {
   // }
+  optionValue = ''
   goToAddItem(params){
     if (!params) params = {};
     this.navCtrl.push(AddItemPage);
