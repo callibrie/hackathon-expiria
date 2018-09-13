@@ -6,15 +6,50 @@ page-items-list {
     margin-left: 10px !important;
 }
 
-// .spacers {
-//     height: 0px !important;
-// }
+.list {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+}
+
+@-webkit-keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+ 
+ @keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+ 
+ .fadeIn {
+    -webkit-animation-name: fadeIn;
+    animation-name: fadeIn;
+ }
 
 .item-md {
     height: 70px;
+    border-radius: 8px;
 }
 
 .expired {
     background: #e0e0e0;
     color: #9e9e9e;
+}
+
+.tab-button {
+    background: dimgray;
+}
+
+.tabs-md .tab-button[aria-selected=true] .tab-button-icon, .tabs-md .tab-button[aria-selected=true] {
+    color: rgb(32, 32, 32);
+}
+
+.tabs-md .tab-button, .tabs-md .tab-button-icon {
+    color: white;
+}
+
+#tab-t0-2:disabled {
+
 }
