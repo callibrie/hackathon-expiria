@@ -6,36 +6,25 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page2" style="background-color:#D1D1D1;">
-  <ion-list id="itemsList-list6">
-    <ion-item color="none" id="itemsList-list-item9">
-      <ion-icon name="restaurant" item-left></ion-icon>
-      Karaage
-      <ion-note item-right>10/07/2018</ion-note>
+  <ion-list id="itemsList-list6" *ngFor="let expiryData of expiryDatas">
+    <ion-item color="none" class="expired" *ngIf="expiryData.is_expire == true">
+      <ion-icon name="restaurant" *ngIf="expiryData.category == 'Food'"></ion-icon>
+      <ion-icon name="person" *ngIf="expiryData.category == 'Cosmetics'"></ion-icon>
+      <ion-icon name="card" *ngIf="expiryData.category == 'Identification Card'"></ion-icon>
+      <ion-icon name="book" *ngIf="expiryData.category == 'Subscription'"></ion-icon>
+      {{expiryData.name}}
+      <ion-note item-right>{{expiryData.expiry_date}}</ion-note>
+    </ion-item>
+
+    <ion-item color="none" *ngIf="expiryData.is_expire == false">
+      <ion-icon name="restaurant" *ngIf="expiryData.category == 'Food'"></ion-icon>
+      <ion-icon name="person" *ngIf="expiryData.category == 'Cosmetics'"></ion-icon>
+      <ion-icon name="card" *ngIf="expiryData.category == 'Identification Card'"></ion-icon>
+      <ion-icon name="book" *ngIf="expiryData.category == 'Subscription'"></ion-icon>
+      {{expiryData.name}}
+      <ion-note item-right>{{expiryData.expiry_date}}</ion-note>
     </ion-item>
   </ion-list>
-  <!-- <div class="spacer" style="height:20px;" id="itemsList-spacer2"></div> -->
-  <ion-list id="itemsList-list7">
-    <ion-item color="none" id="itemsList-list-item10">
-      <ion-icon name="person" item-left></ion-icon>
-      Facial Cream
-      <ion-note item-right>01/20/2019</ion-note>
-    </ion-item>
-  </ion-list>
-  <!-- <div class="spacer" style="height:20px;" id="itemsList-spacer13"></div> -->
-  <ion-list id="itemsList-list11">
-    <ion-item color="none" id="itemsList-list-item11" class="expired">
-      <ion-icon name="rss" item-left></ion-icon>
-      Netflix
-      <ion-note item-right>05/09/2018</ion-note>
-    </ion-item>
-  </ion-list>
-  <ion-list id="itemsList-list8">
-    <ion-item color="none" id="itemsList-list-item15">
-      <ion-icon name="card" item-left></ion-icon>
-      在留カード
-      <ion-note item-right>09/30/2018</ion-note>
-    </ion-item>
-  </ion-list>
-  <!-- <div class="spacer" style="height:20px;" id="itemsList-spacer14"></div> -->
+  <div class="spacer" style="height:20px;" id="itemsList-spacer14"></div>
 
 </ion-content>

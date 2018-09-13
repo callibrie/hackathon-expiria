@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Camera } from '@ionic-native/camera';
 import { NgProgressModule } from '@ngx-progressbar/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ItemsListPage } from '../pages/items-list/items-list';
 import { AddItemPage } from '../pages/add-item/add-item';
@@ -15,6 +16,7 @@ import { CameraAddPage } from '../pages/camera-add/camera-add';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
   declarations: [
@@ -28,6 +30,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     NgProgressModule.forRoot()
   ],
@@ -45,7 +48,8 @@ import { SplashScreen } from '@ionic-native/splash-screen';
     StatusBar,
     SplashScreen,
     Camera,
-    {provide: ErrorHandler, useClass: IonicErrorHandler}
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    RestProvider
   ]
 })
 export class AppModule {}
