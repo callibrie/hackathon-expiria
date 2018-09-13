@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page7" style="background-color:#D1D1D1;">
-  <form id="cameraAdd-form3">
+  <form (ngSubmit)="saveExpiryDataItem()">
     <img [src]="selectedImage" *ngIf="selectedImage" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />
     <!--<img src="assets/img/Jy3GOB0Qy2eB0im9dbm9_41517288_1883178495310456_6088353537807351808_n.jpg" style="display:block;width:100%;height:auto;margin-left:auto;margin-right:auto;" />-->
     <div class="spacer" style="height:30px;" id="cameraAdd-spacer8"></div>
@@ -15,40 +15,30 @@
         Exp. Date:
       </ion-label>
       <ion-note item-end>Click to edit</ion-note>
-      <ion-input placeholder="YYYYMMDD" value="{{ imageText }}"></ion-input>
+      <ion-input placeholder="YYYYMMDD" [(ngModel)]='item.expiry_date' name='expiry_date' value="{{ imageText }}"></ion-input>
     </ion-item>
     <div class="spacer" style="height:20px;" id="cameraAdd-spacer9"></div>
     <ion-item id="cameraAdd-input5">
       <ion-label>
         Name:
       </ion-label>
-      <ion-input type="text" placeholder=""></ion-input>
+      <ion-input type="text" placeholder="" [(ngModel)]='item.name' name='name'></ion-input>
     </ion-item>
     <div class="spacer" style="height:20px;" id="cameraAdd-spacer10"></div>
     <ion-item id="cameraAdd-select3">
       <ion-label>
         Category
       </ion-label>
-      <ion-select name="">
-        <ion-option>
-          Food
-        </ion-option>
-        <ion-option>
-          Cosmetics
-        </ion-option>
-        <ion-option>
-          Identification Card
-        </ion-option>
-        <ion-option>
-          Subscription
-        </ion-option>
+      <ion-select name="" [(ngModel)]="optionValue">
+        <ion-option>Food</ion-option>
+        <ion-option>Cosmetics</ion-option>
+        <ion-option>Identification Card</ion-option>
+        <ion-option>Subscription</ion-option>
       </ion-select>
     </ion-item>
+    <div class="spacer" style="height:20px;" id="manualAdd-spacer5"></div>
+    <button id="manualAdd-button3" ion-button type="submit" block>Save</button>
   </form>
-  <div class="spacer" style="height:20px;" id="cameraAdd-spacer12"></div>
-  <button id="cameraAdd-button5" ion-button color="positive" block on-click="goToAddItem()">
-    Save
-  </button>
   <button id="cameraAdd-button6" ion-button color="assertive" block on-click="goToAddItem()">
     Cancel
   </button>
