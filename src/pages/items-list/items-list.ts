@@ -19,6 +19,7 @@ export class ItemsListPage {
     this.restProvider.getExpiryDatas()
     .then(data => {
       this.expireDatas = data.expireDatas;
+      console.log(this.expireDatas);
     });
   }
 
