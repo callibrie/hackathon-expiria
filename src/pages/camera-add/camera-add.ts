@@ -3,6 +3,7 @@ import { NavController, NavParams } from 'ionic-angular';
 import { AddItemPage } from '../add-item/add-item';
 import { ManualAddPage } from '../manual-add/manual-add';
 import { RestProvider } from '../../providers/rest/rest';
+import { ItemsListPage } from '../items-list/items-list';
 
 @Component({
   selector: 'page-camera-add',
@@ -38,6 +39,8 @@ export class CameraAddPage {
     let body = '&category='+this.item.category+'&expiry_date='+this.item.expiry_date+'&name='+this.item.name;
     this.restProvider.addExpiryDataItem(body).then((result) => {
       console.log(result);
+      this.navCtrl.push(ItemsListPage);
+      window.location.reload();
     }, (err) => {
       console.log(err);
     });

@@ -70,10 +70,11 @@ export class AddItemPage {
       })
       .finally(resultOrError => {
         this.progress.complete();
-        this.goToCameraAdd({
-          image: this.selectedImage,
-          text: this.imageText
-        });
+        this.navCtrl.push(CameraAddPage, {image:this.selectedImage, text:this.imageText});
+        // this.goToCameraAdd({
+        //   image: this.selectedImage,
+        //   text: this.imageText
+        // });
       });
   }
 

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { NavController } from 'ionic-angular';
 import { AddItemPage } from '../add-item/add-item';
+import { ItemsListPage } from '../items-list/items-list';
 import { CameraAddPage } from '../camera-add/camera-add';
 import { RestProvider } from '../../providers/rest/rest';
 
@@ -38,6 +39,8 @@ export class ManualAddPage {
     let body = '&category='+this.item.category+'&expiry_date='+this.item.expiry_date+'&name='+this.item.name;
     this.restProvider.addExpiryDataItem(body).then((result) => {
       console.log(result);
+      this.navCtrl.push(ItemsListPage);
+      window.location.reload();
     }, (err) => {
       console.log(err);
     });
