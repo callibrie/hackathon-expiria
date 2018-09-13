@@ -15,7 +15,7 @@ export class ItemsListPage {
 
   constructor(public navCtrl: NavController, public localNotifications: LocalNotifications, public restProvider: RestProvider) {
     this.getExpiryDatas();
-    this.startNotification();
+    this.getToNotify();
   }
 
   getExpiryDatas() {
@@ -26,11 +26,14 @@ export class ItemsListPage {
     });
   }
 
-  startNotification(){
+  getToNotify(){
     this.restProvider.getExpiryToNotify()
       .then(data => {
         this.toNotify = data;
+        this.startNotification();
       });
+  }
+  startNotification(){
 
     this.localNotifications.schedule([{
       id: 1,
