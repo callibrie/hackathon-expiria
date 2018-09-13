@@ -13,7 +13,14 @@ export class ManualAddPage {
   // should be each tab's root Page
   // constructor(public navCtrl: NavController) {
   // }
-  optionValue = ''
+  optionValue = '';
+
+  item = { expiry_date:'', name:'', category:'' };
+
+  constructor(public navCtrl: NavController, public restProvider: RestProvider) {
+
+  }
+
   goToAddItem(params){
     if (!params) params = {};
     this.navCtrl.push(AddItemPage);
@@ -24,10 +31,6 @@ export class ManualAddPage {
     if (!params) params = {};
     this.navCtrl.push(CameraAddPage);
   }
-
-  item = { expiry_date:'', name:'', category:'' };
-
-  constructor(public navCtrl: NavController, public restProvider: RestProvider) {}
 
   saveExpiryDataItem() {
     this.item.category = this.optionValue;
