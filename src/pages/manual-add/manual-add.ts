@@ -29,14 +29,6 @@ export class ManualAddPage {
 
   constructor(public navCtrl: NavController, public restProvider: RestProvider) {}
 
-  getExpiryDatas() {
-    this.restProvider.getExpiryDatas()
-    .then(data => {
-      this.expiryDatas = data.expireDatas;
-      console.log(this.expiryDatas);
-    });
-  }
-
   saveExpiryDataItem() {
     this.item.category = this.optionValue;
     this.restProvider.addExpiryDataItem(this.item).then((result) => {

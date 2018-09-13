@@ -9,7 +9,7 @@ import { RestProvider } from '../../providers/rest/rest';
 export class ItemsListPage {
   // this tells the tabs component which Pages
   // should be each tab's root Page
-  expiryDatas: any;
+  expireDatas: any;
 
   constructor(public navCtrl: NavController, public restProvider: RestProvider) {
     this.getExpiryDatas();
@@ -18,7 +18,7 @@ export class ItemsListPage {
   getExpiryDatas() {
     this.restProvider.getExpiryDatas()
     .then(data => {
-      this.expiryDatas = data.expireDatas;
+      this.expireDatas = data.expireDatas;
     });
   }
 

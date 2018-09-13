@@ -6,23 +6,23 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page2" style="background-color:#D1D1D1;">
-  <ion-list id="itemsList-list6" *ngFor="let expiryData of expiryDatas">
-    <ion-item color="none" class="expired" *ngIf="expiryData.is_expire == true">
-      <ion-icon name="restaurant" *ngIf="expiryData.category == 'Food'"></ion-icon>
-      <ion-icon name="person" *ngIf="expiryData.category == 'Cosmetics'"></ion-icon>
-      <ion-icon name="card" *ngIf="expiryData.category == 'Identification Card'"></ion-icon>
-      <ion-icon name="book" *ngIf="expiryData.category == 'Subscription'"></ion-icon>
-      {{expiryData.name}}
-      <ion-note item-right>{{expiryData.expiry_date}}</ion-note>
+  <ion-list id="itemsList-list6" *ngFor="let expireData of expireDatas">
+    <ion-item color="none" class="expired" *ngIf="expireData.is_expire == true">
+      <ion-icon name="restaurant" *ngIf="expireData.category == 'Food'"></ion-icon>
+      <ion-icon name="person" *ngIf="expireData.category == 'Cosmetics'"></ion-icon>
+      <ion-icon name="card" *ngIf="expireData.category == 'Identification Card'"></ion-icon>
+      <ion-icon name="book" *ngIf="expireData.category == 'Subscription'"></ion-icon>
+      {{expireData.name}}
+      <ion-note item-right>{{expireData.expiry_date}}</ion-note>
     </ion-item>
 
-    <ion-item color="none" *ngIf="expiryData.is_expire == false">
-      <ion-icon name="restaurant" *ngIf="expiryData.category == 'Food'"></ion-icon>
-      <ion-icon name="person" *ngIf="expiryData.category == 'Cosmetics'"></ion-icon>
-      <ion-icon name="card" *ngIf="expiryData.category == 'Identification Card'"></ion-icon>
-      <ion-icon name="book" *ngIf="expiryData.category == 'Subscription'"></ion-icon>
-      {{expiryData.name}}
-      <ion-note item-right>{{expiryData.expiry_date}}</ion-note>
+    <ion-item color="none" *ngIf="expireData.is_expire == false">
+      <ion-icon name="restaurant" *ngIf="expireData.category == 'Food'"></ion-icon>
+      <ion-icon name="person" *ngIf="expireData.category == 'Cosmetics'"></ion-icon>
+      <ion-icon name="card" *ngIf="expireData.category == 'Identification Card'"></ion-icon>
+      <ion-icon name="book" *ngIf="expireData.category == 'Subscription'"></ion-icon>
+      {{expireData.name}}
+      <ion-note item-right>{{expireData.expiry_date}}</ion-note>
     </ion-item>
   </ion-list>
   <div class="spacer" style="height:20px;" id="itemsList-spacer14"></div>
