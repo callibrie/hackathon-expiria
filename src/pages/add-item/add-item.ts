@@ -73,7 +73,7 @@ export class AddItemPage {
         this.goToCameraAdd({
           image: this.selectedImage,
           text: this.imageText
-        })
+        });
       });
   }
 

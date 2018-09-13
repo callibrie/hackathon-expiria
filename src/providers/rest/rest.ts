@@ -16,9 +16,11 @@ export class RestProvider {
     console.log('Hello RestServiceProvider Provider');
   }
 
+
   getExpiryDatas() {
     return new Promise(resolve => {
       this.http.get(this.apiUrl+'/expiredata').subscribe(data => {
+        console.log(data);
         resolve(data);
       }, err => {
         console.log(err);
@@ -35,6 +37,16 @@ export class RestProvider {
         .subscribe(err => {
           resolve(err);
         });
+    });
+  }
+
+  getExpiryToNotify(){
+    return new Promise(resolve => {
+      this.http.get(this.apiUrl+'/expiredata/checkExpiry').subscribe(data => {
+        resolve(data);
+      }, err => {
+        console.log(err);
+      });
     });
   }
 

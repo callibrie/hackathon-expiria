@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { NavController, NavParams } from 'ionic-angular';
 import { AddItemPage } from '../add-item/add-item';
 import { ManualAddPage } from '../manual-add/manual-add';
+import { RestProvider } from '../../providers/rest/rest';
 
 @Component({
   selector: 'page-camera-add',

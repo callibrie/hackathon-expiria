@@ -16,6 +16,7 @@ import { CameraAddPage } from '../pages/camera-add/camera-add';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
+import { LocalNotifications } from '@ionic-native/local-notifications';
 import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
@@ -49,6 +50,7 @@ import { RestProvider } from '../providers/rest/rest';
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
+    LocalNotifications,
     RestProvider
   ]
 })
