@@ -6,7 +6,7 @@
   </ion-navbar>
 </ion-header>
 <ion-content padding id="page2" style="background-color:#D1D1D1;">
-  <ion-list id="itemsList-list6" *ngFor="let expireData of expireDatas">
+  <ion-list id="itemsList-list6" class="fadeIn" *ngFor="let expireData of expireDatas">
     <ion-item color="none" class="expired" *ngIf="expireData.is_expire == true">
       <ion-icon name="restaurant" *ngIf="expireData.category == 'Food'"></ion-icon>
       <ion-icon name="person" *ngIf="expireData.category == 'Cosmetics'"></ion-icon>
