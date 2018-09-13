@@ -32,26 +32,12 @@ export class ItemsListPage {
         this.toNotify = data;
       });
 
-    
-
-    for (let entry of this.toNotify) {
-      console.log(entry);
-
-    }
-
-
     this.localNotifications.schedule([{
       id: 1,
-      title: "Your item will expire soon!",
-      text: '[item name] will expire in 2 days!',
+      title: 'Your' + this.toNotify[0].category + ' will expire soon!',
+      text: this.toNotify[0].message,
       icon: 'icon.png',
       trigger: {at: new Date(new Date().getTime() + 60000)},
-    },{
-      id: 2,
-      title: 'Notif 2',
-      text: 'Multi ILocalNotification 2',
-      icon: 'icon.png',
-      trigger: {at: new Date(new Date().getTime() + 80000)},
     }]);
 
   }

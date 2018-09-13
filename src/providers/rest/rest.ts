@@ -42,7 +42,7 @@ export class RestProvider {
 
   getExpiryToNotify(){
     return new Promise(resolve => {
-      this.http.get(this.apiUrl+'/checkExpire').subscribe(data => {
+      this.http.get(this.apiUrl+'/expiredata/checkExpiry').subscribe(data => {
         resolve(data);
       }, err => {
         console.log(err);
