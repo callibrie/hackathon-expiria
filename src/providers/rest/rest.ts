@@ -28,11 +28,12 @@ export class RestProvider {
 
   addExpiryDataItem(data) {
     return new Promise((resolve, reject) => {
-      this.http.post(this.apiUrl+'/expiredata', data, {
+      console.log(JSON.stringify(data));
+      this.http.post(this.apiUrl+'/expiredata', JSON.stringify(data), {
         headers: new HttpHeaders().set('Content-Type','application/x-www-form-urlencoded'),
       })
-        .subscribe(res => {
-          resolve(res);
+        .subscribe(err => {
+          resolve(err);
         });
     });
   }

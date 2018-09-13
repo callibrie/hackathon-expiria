@@ -9,7 +9,6 @@ import { RestProvider } from '../../providers/rest/rest';
   templateUrl: 'manual-add.html'
 })
 export class ManualAddPage {
-  optionValue = "";
   // this tells the tabs component which Pages
   // should be each tab's root Page
   // constructor(public navCtrl: NavController) {
@@ -31,7 +30,9 @@ export class ManualAddPage {
 
   saveExpiryDataItem() {
     this.item.category = this.optionValue;
-    this.restProvider.addExpiryDataItem(this.item).then((result) => {
+    console.log(this.item.name);
+    let body = '&category='+this.item.category+'&expiry_date='+this.item.expiry_date+'&name='+this.item.name;
+    this.restProvider.addExpiryDataItem(body).then((result) => {
       console.log(result);
     }, (err) => {
       console.log(err);
