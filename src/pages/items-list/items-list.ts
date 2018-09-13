@@ -37,7 +37,7 @@ export class ItemsListPage {
 
     this.localNotifications.schedule([{
       id: 1,
-      title: 'Your' + this.toNotify[0].category + ' will expire soon!',
+      title: 'Your ' + this.toNotify[0].category + ' will expire soon!',
       text: this.toNotify[0].message,
       icon: 'icon.png',
       trigger: {at: new Date(new Date().getTime() + 60000)},
