@@ -4,6 +4,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 import { Camera } from '@ionic-native/camera';
 import { NgProgressModule } from '@ngx-progressbar/core';
+import { HttpClientModule } from '@angular/common/http';
 
 import { ItemsListPage } from '../pages/items-list/items-list';
 import { AddItemPage } from '../pages/add-item/add-item';
@@ -16,6 +17,7 @@ import { CameraAddPage } from '../pages/camera-add/camera-add';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LocalNotifications } from '@ionic-native/local-notifications';
+import { RestProvider } from '../providers/rest/rest';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,7 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
     IonicModule.forRoot(MyApp),
     NgProgressModule.forRoot()
   ],
@@ -47,7 +50,8 @@ import { LocalNotifications } from '@ionic-native/local-notifications';
     SplashScreen,
     Camera,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
-    LocalNotifications
+    LocalNotifications,
+    RestProvider
   ]
 })
 export class AppModule {}
